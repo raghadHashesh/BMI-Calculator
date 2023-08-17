@@ -45,7 +45,7 @@ function countBmi() {
         result = 'Over Weight';
     }
     else {
-        result = ' wrong data'
+        result = ' obesity'
     }
 
     resultArea.style.display = "block";
