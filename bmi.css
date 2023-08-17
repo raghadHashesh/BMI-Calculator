@@ -11,7 +11,7 @@ body {
     justify-content: center;
     min-height: 80vh;
     background-color: rgba(97, 138, 254, 0.9);
-    margin: 10px auto;
+    margin: 30px auto;
 }
 
 .container {
@@ -44,6 +44,12 @@ h1 {
     border-radius: 12px;
     padding: 10px 0;
     margin-bottom: 10px;
+}
+.containerHW{
+display: flex;
+align-items: center;
+justify-content: space-between;
+margin-bottom: 20px;
 }
 
 .input label,
