@@ -1,0 +1,452 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: ; */
+}
+
+body {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    background-color: rgba(97, 138, 254, 0.9);
+    margin: 20px auto;
+}
+
+.container {
+    width: 35%;
+}
+
+.box {
+    width: 100%;
+    background-color: #fafafa;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 2px 2px 20px 5px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    color: rgba(0, 0, 0, 0.7);
+    font-weight: bold;
+    font-size: 36px;
+    padding: 20px 0;
+}
+
+.content {
+    padding: 0 30px;
+}
+
+.input {
+    background-color: #fff;
+    box-shadow: 0px 0px 95px -30px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    padding: 10px 0;
+    margin-bottom: 10px;
+}
+
+.input label,
+.inputW label,
+.inputH label {
+    display: block;
+    font-size: 22px;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 7px;
+}
+
+.input input,
+.inputH input,
+.inputW input {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #4f7df9;
+    width: 50%;
+    text-align: center;
+    font-size: 20px;
+    /* font-family: "Nunito","sans-serif"; */
+}
+
+.inputW,
+.inputH {
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0px 0px 95px -30px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    padding: 5px 0;
+    margin-bottom: 10px;
+}
+
+.inputH {
+    margin-right: 20px;
+}
+
+button.calculate,
+button.clear {
+    cursor: pointer;
+    /* font-family: "Nunito","sans-serif"; */
+    color: #fff;
+    font-size: 16px;
+    border-radius: 7px;
+    padding: 12px 0;
+    width: 45%;
+    outline: none;
+    border: none;
+    transition: all 0.5s;
+    margin-bottom: 10px;
+}
+
+button.calculate {
+    background-color: rgba(97, 138, 254, 1);
+}
+
+button.clear {
+    background-color: rgb(155, 182, 255);
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+button.calculate:hover {
+    background-color: #0044ff;
+}
+
+button.clear:hover {
+    background-color: #0044ff;
+}
+
+.result {
+    padding: 10px 20px;
+}
+
+.result p {
+    font-weight: 600;
+    font-size: 22px;
+    color: #000;
+    margin-bottom: 15px;
+}
+
+.result #result {
+    font-size: 30px;
+    font-weight: 900;
+    color: #4f7df9;
+    background-color: #eaeaea;
+    display: inline-block;
+    padding: 4px 20px;
+    border-radius: 55px;
+}
+
+#comment {
+    color: #4f7df9;
+    font-weight: 700;
+}
+
+.comment {
+    display: none;
+    border-radius: 7px;
+    border: dashed 1px;
+    padding: 5px;
+    margin-top: 7px;
+}
+
+.gender {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px 0;
+    margin-bottom: 10px;
+    box-shadow: 0px 0px 95px -30px rgba(0, 0, 0, 0.15);
+}
+
+.gender .container {
+    width: 30%;
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-top: 7px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.gender .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+}
+
+.gender .container:hover input~.checkmark {
+    background-color: #ccc;
+}
+
+.gender .container input:checked~.checkmark {
+    background-color: #2196f3;
+}
+
+.checkmark::after {
+    content: '';
+    position: absolute;
+    display: none;
+}
+
+
+.gender .container input:checked~.checkmark::after {
+    display: block;
+}
+
+.gender .container .checkmark::after {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 8px;
+    height: 8px;
+    background: white;
+}
+
+.containerHM {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    padding-top: 300px;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 600px;
+    border-radius: 10px;
+    box-shadow: #393c76 -1px 2px 2px 1px;
+}
+
+#modalText {
+    padding: 8px;
+    padding-right: 5px;
+    font-size: 18px;
+    /* font-family: "Poppins","sans-serif"; */
+    color: rgb(24, 23, 23);
+}
+
+.modal-wrong {
+    border: 2px solid red;
+}
+
+.modal-correct {
+    border: 2px solid green;
+}
+
+.close {
+    float: right;
+    color: #aaaaaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.close:hover {
+    color: #d41111;
+}
+
+@media(min-width:768px) and (max-width:992px) {
+    .container {
+        width: 50%;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    body {
+        margin: 7px auto;
+    }
+
+    .input label {
+        font-size: 20px;
+    }
+
+    .inputH label,
+    .inputW label {
+        font-size: 18px;
+    }
+
+    .inputH input,
+    .inputW input,
+    .input input {
+        font-size: 24px;
+    }
+
+    .gender .container {
+        font-size: 20px;
+        padding-left: 20px;
+    }
+
+    .result #result {
+        font-size: 25px;
+    }
+
+    button.calculate,
+    button.clear {
+        font-size: 14px;
+    }
+
+    .mode-content {
+        width: 380px;
+    }
+}
+
+
+@media (min-width:576px) and (max-width:767px) {
+    .container {
+        width: 60%;
+    }
+
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    body {
+        margin: 7px auto;
+    }
+
+    .input label {
+        font-size: 18px;
+    }
+
+    .inputH label,
+    .inputW label {
+        font-size: 14px;
+    }
+
+    .inputH input,
+    .inputW input,
+    .input input {
+        font-size: 24px;
+    }
+
+    .gender .container {
+        font-size: 20px;
+        padding-left: 20px;
+    }
+
+    .result #result {
+        font-size: 25px;
+    }
+
+    button.calculate,
+    button.clear {
+        font-size: 14px;
+    }
+
+    .mode-content {
+        width: 380px;
+    }
+}
+
+@media (max-width:575px) {
+    .container {
+        width: 60%;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    body {
+        margin: 7px auto;
+    }
+
+    .input label {
+        font-size: 18px;
+    }
+
+    .inputH label,
+    .inputW label {
+        font-size: 14px;
+    }
+
+    .inputH input,
+    .inputW input,
+    .input input {
+        font-size: 20px;
+    }
+
+    .gender .container {
+        width: 60%;
+        font-size: 18px;
+        padding-left: 10px;
+    }
+
+    .checkmark {
+        top: 2px;
+        height: 16px;
+        width: 16px;
+    }
+
+    .gender .container .checkmark::after {
+        width: 5px;
+        height: 5px;
+    }
+        .result #result {
+            font-size: 20px;
+        }
+
+        button.calculate,
+        button.clear {
+            font-size: 12px;
+        }
+
+        .mode-content {
+            width: 350px;
+        }
+
+        .result p {
+            font-size: 18px;
+        }
+    }
+    @media (max-width:366px) {
+        .container {
+            width: 90%;
+        }
+        .gender .container {
+            width: 45%;
+            padding-left: 7px;
+        }
+        
+    }
