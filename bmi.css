@@ -11,7 +11,7 @@ body {
     justify-content: center;
     min-height: 80vh;
     background-color: rgba(97, 138, 254, 0.9);
-    margin: 20px auto;
+    margin: 10px auto;
 }
 
 .container {
@@ -126,7 +126,6 @@ button.clear:hover {
     font-size: 22px;
     color: #000;
     margin-bottom: 15px;
-    font-family: 'Poppins', sans-serif;
 }
 
 .result #result {
